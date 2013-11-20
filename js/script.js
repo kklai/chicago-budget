@@ -6,14 +6,15 @@ function init() {
     	budget_data = input;
     	getDepartments();
     },
-    simpleSheet: true } )
+    simpleSheet: true } )	
 }
 
 var all_departments = [];
 var departments = [];
+var deptnumbers = [];
 function getDepartments() {
 	for (var i = 0; i < budget_data.length; i++) {
-		all_departments.push(budget_data[i].deptname);
+		all_departments.push(budget_data[i].dept);
 	};
 	var uniques = _.uniq(all_departments);
 	for (var i = 0; i < uniques.length; i++) {
@@ -25,16 +26,16 @@ function getDepartments() {
 function getDeptInfo() {
 	for (var i=0; i < 30; i++){
 		for (var j=0; j < departments.length; j++) {
-			if (budget_data[i].deptname == departments[j].name) {
+			if (budget_data[i].dept == departments[j].name) {
 				// console.log(i + ', ' + departments[j].name + ', ' + budget_data[i].category + ', ' + budget_data[i].total);
-				$('#' + j).append('<td><p>$' + budget_data[i].total + '</p></td>');
+				// $('#' + j).append('<td><p>$' + budget_data[i].total + '</p></td>');
 			}
 		}
 	}
 }
 
 function writeTable(){
-	for (var i=0; i< 10; i++ ) {
+	for (var i=0; i< departments.length; i++ ) {
 		$('tbody').append('<tr id="' + i + '"><td><p>' + departments[i].name + '<p></td></tr>');
 	}
 	getDeptInfo();
@@ -42,7 +43,4 @@ function writeTable(){
 
 $(document).ready(function(){
 	init();
-	for (var i=0; i < departments.length; i++) {
-		console.log(departments[i].name)
-	}
 });
