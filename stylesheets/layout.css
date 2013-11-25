@@ -30,6 +30,10 @@ h1 {
 	font-size: 20px;
 }
 
+a.toggle:hover {
+	opacity:0.5;
+}
+
 #intro {
 	margin: 0 40px 0 0;
 }
@@ -45,9 +49,25 @@ th, tr{
 	border-bottom: 1px solid black;
 }
 
-td > p {
+th >p, td > p {
 	text-transform: capitalize;
-	margin: 5px 0 5px 0 !important;
+	margin: 5px 20px 10px 0 !important;
+	width: 100;
+}
+tr td:first-child {
+	text-align: right;
+}
+
+tr td {
+	text-align: right;
+}
+
+th {
+	font-weight: bolder;
+}
+tr th:first-child {
+	text-align: right;
+	margin: 5px 20px 10px 0 !important;
 }
 
 /* #Media Queries
@@ -68,6 +88,17 @@ td > p {
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {}
 
+
+/* CHART */
+text {
+	font: 12px sans-serif;
+	fill: #fff;
+}
+
+.chart {
+	margin-top: -50px;
+	display:none;
+}
 
 /* #Font-Face
 ================================================== */
