@@ -1,0 +1,87 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+	 {
+	 "name": "tech",
+	 "children": [
+				{"name":"DEPARTMENT OF INNOVATION AND TECHNOLOGY","size":35532574},
+        {"name":"DEPARTMENT OF BUSINESS AFFAIRS & CONSUMER PROTECTION","size":19671485}
+		]
+	},
+	{
+	 "name": "social",
+	 "children": [
+		{"name":"FAMILY AND SUPPORT SERVICES","size":322044043},
+		{"name":"DEPARTMENT OF PUBLIC HEALTH","size":148956563},
+		{"name":"DEPARTMENT OF LAW","size":36438155},
+		{"name":"DEPARTMENT OF ADMINISTRATIVE HEARING","size":7835668},
+		{"name":"ANIMAL CARE AND CONTROL","size":7378749},
+		{"name":"MAYOR'S OFFICE FOR PEOPLE WITH DISABILITIES","size":5328777},
+		{"name":"COMMISSION ON HUMAN RELATIONS","size":2174765}
+	 ]
+	},
+  {
+     "name": "recreation",
+     "children": [
+        {"name":"CULTURAL AFFAIRS SPECIAL EVENT","size":34070365},
+        {"name":"CHICAGO PUBLIC LIBRARY","size":68549837},
+        {"name":"ILLINOIS PARK AND RECREATION ASSOCIATION","size":8293507}
+      ]
+    },
+    {
+     "name": "publicservice",
+     "children": [
+        {"name":"DEPARTMENT OF POLICE","size":1371563213},
+        {"name":"FIRE DEPARTMENT","size":575727555},
+        {"name":"OFFICE OF EMERGENCY MANAGEMENT AND COMMUNICATIONS","size":203769847},
+        {"name":"POLICE BOARD","size":434083},
+        {"name":"LICENSE APPEAL COMMISSION","size":168295}
+      ]
+    },
+    {
+     "name": "infrastructure",
+     "children": [
+        {"name":"DEPARTMENT OF WATER MANAGEMENT","size":265763920},
+        {"name":"DEPARTMENT STREETS AND SANITATION","size":258155839},
+        {"name":"DEPARTMENT OF BUILDINGS","size":32400152},
+        {"name":"PLANNING AND DEVELOPMENT","size":152522652},
+        {"name":"DEPARTMENT OF PROCUREMENT SERVICES","size":7861107}
+      ]
+    },
+    {
+     "name": "transportation",
+     "children": [
+        {"name":"DEPARTMENT OF AVIATION","size":810399102},
+        {"name":"CHICAGO DEPARTMENT OF TRANSPORTATION","size":669069833},
+        {"name":"FLEET AND FACILITY MGMT","size":332282548}
+      ]
+    },
+    {
+     "name": "administration",
+     "children": [
+        {"name":"CITY COUNCIL","size":26687857},
+        {"name":"BOARD OF ELECTION COMMISSIONER","size":11875547},
+        {"name":"CITY CLERK","size":10000843},
+        {"name":"OFFICE OF THE MAYOR","size":9211276},
+        {"name":"OFFICE OF BUDGET & MANAGEMENT","size":9063442},
+        {"name":"DEPARTMENT OF HUMAN RESOURCES","size":5847162},
+        {"name":"OFFICE OF INSPECTOR GENERAL","size":5769239},
+        {"name":"CITY TREASURER","size":2497474},
+        {"name":"BOARD OF ETHICS","size":775383}
+      ]
+    },
+    {
+     "name": "finance",
+     "children": [
+        {"name":"DEPARTMENT OF FINANCE","size":78854473},
+        {"name":"FINANCE GENERAL","size":3546070670}
+      ]
+    }
+
+   ]
+  }
+]
+}
