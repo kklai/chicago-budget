@@ -1,6 +1,19 @@
 var budget_total = 8482636000;
 var budget_data;
-// var data = http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/
+var test_data = "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/";
+var test;
+
+function getData() {
+	$.ajax({
+	  type: "GET",
+	  url: test_data,
+	  dataType: "json",
+	  success: function(data) {
+	  	test = data;
+  }
+});
+}
+
 function init() {
   Tabletop.init( { 
   	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
