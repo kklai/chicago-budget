@@ -1,5 +1,6 @@
 var budget_total = 8482636000;
 var budget_data;
+// var data = http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/
 function init() {
   Tabletop.init( { 
   	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
@@ -10,6 +11,14 @@ function init() {
     simpleSheet: true } )	
 }
 
+function commaSeparateNumber(val){
+  while (/(\d+)(\d{3})/.test(val.toString())){
+    val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+  }
+  return val;
+ }
+
+// process data from spreadsheet into simpler arrays
 var all_departments = [];
 var departments = [];
 var deptnumbers = [];
@@ -46,13 +55,7 @@ function getDeptInfo() {
 	writeTable()
 }
 
-function commaSeparateNumber(val){
-  while (/(\d+)(\d{3})/.test(val.toString())){
-    val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
-  }
-  return val;
- }
-
+//Create table
 function writeTable(){
 	$('#budget').append('<thead><tr><th>Department<i class="fa fa-sort"></i></th><th>Recommendation<i class="fa fa-sort"></i></th><th>Percentage in Budget<i class="fa fa-sort"></i></th><th>% Change from 2013<i class="fa fa-sort"></i></th></tr></thead>');
 	$('#budget').append('<tbody></tbody>');
