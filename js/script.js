@@ -93,7 +93,7 @@ function writeTable(){
 // bubblechart
 function chart(){
 	var margin = {top: 40, right: 10, bottom: 10, left: 0},
-    width = 940 - margin.left - margin.right,
+    width = 948 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 	var color = d3.scale.ordinal().range([ "#6A92D4","#228653", "#36D986", "#99a8c1", "#82bdff", "#1acbab", "#5FBDCE", "#0999b4", "#04859D"])
@@ -149,6 +149,10 @@ function tooSmall() {
 	}
 }
 
+function legend() {
+	$('.chart').append('<div class="legend"><ul><li><span class ="cat" id="bus"></span>Buisness and Technology</li><li style="padding-right: 20px"><span class ="cat" id="gen"></span>General Offices</li><li><span class ="cat" id="rec"></span>Recreation</li><li><span class ="cat" id="soc"></span>Social Services</li><li><span class ="cat" id="infra"></span>Infrastructure</li><li><span class ="cat" id="trans"></span>Transportation</li><li style="padding-left: 72px;"><span class ="cat" id="safety"></span>Safety and Protection</li><li style="margin-left: -17px;"><span class ="cat" id="fin"></span>Finance</li></ul></div>')
+}
+
 // toggle views
 function toggleViews(show, hide) {
 	$(this).css('opacity', '0.5');
@@ -170,5 +174,6 @@ $(window).load(function(){
 		offset:0
 	});
 	tooSmall();
+	legend();
 	$('.chart').fadeIn('slow');
 })

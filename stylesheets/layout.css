@@ -158,6 +158,40 @@ thead > tr {
 	padding: 10px;
 }
 
+.legend {
+	margin-top: 10px;
+}
+
+.legend ul {
+  background-color: #f0f0f0;
+  border: 1px solid #ececec;
+  padding: 10px 20px 5px 20px;
+  border-radius: 10px;
+}
+
+.legend ul li {
+	display: inline-block;
+	margin: 0 30px 8px 0;
+}
+
+.cat {
+	width: 10px;
+	height: 10px;
+	padding: 0 8px;
+	margin: 0 3px 0 0;
+	background-color: #000;
+}
+
+#bus { background-color: rgb(54, 217, 134); }
+#gen { background-color: rgb(4, 133, 157); }
+#rec { background-color: rgb(130, 189, 255); }
+#soc { background-color: rgb(153, 168, 193); }
+#infra { background-color: rgb(95, 189, 206); }
+#trans { background-color: rgb(9, 153, 180); }
+#safety { background-color: rgb(26, 203, 171);}
+#fin { background-color: rgb(106, 146, 212); }
+
+
 /* #Media Queries
 ================================================== */
 
