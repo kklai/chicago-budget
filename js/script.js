@@ -150,7 +150,7 @@ function tooSmall() {
 }
 
 function legend() {
-	$('.chart').append('<div class="legend"><ul><li><span class ="cat" id="bus"></span>Buisness and Technology</li><li style="padding-right: 20px"><span class ="cat" id="gen"></span>General Offices</li><li><span class ="cat" id="rec"></span>Recreation</li><li><span class ="cat" id="soc"></span>Social Services</li><li><span class ="cat" id="infra"></span>Infrastructure</li><li><span class ="cat" id="trans"></span>Transportation</li><li style="padding-left: 72px;"><span class ="cat" id="safety"></span>Safety and Protection</li><li style="margin-left: -17px;"><span class ="cat" id="fin"></span>Finance</li></ul></div>')
+	$('.chart').append('<div class="legend"><ul><li id="leg">Legend:</li><li><span class ="cat" id="bus"></span>Buisness and Technology</li><li style="padding-right: 20px"><span class ="cat" id="gen"></span>General Offices</li><li><span class ="cat" id="rec"></span>Recreation</li><li><span class ="cat" id="soc"></span>Social Services</li><li style="padding-left: 92px;"><span class ="cat" id="infra"></span>Infrastructure</li><li style="padding-left: 80px;"><span class ="cat" id="trans"></span>Transportation</li><li style="padding-left: 24px;"><span class ="cat" id="fin"></span>Finance</li><li style="padding-left: 20px;"><span class ="cat" id="safety"></span>Safety and Protection</li></ul></div>')
 }
 
 // toggle views

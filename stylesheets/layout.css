@@ -19,6 +19,9 @@
 
 body {
 	padding: 0 0 30px 0;
+	font-family: "open-sans";
+	font-size: 15px;
+	font-weight: 400;
 }
 
 .header {
@@ -167,6 +170,9 @@ thead > tr {
   border: 1px solid #ececec;
   padding: 10px 20px 5px 20px;
   border-radius: 10px;
+  font-family: "open-sans",sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
 
 .legend ul li {
@@ -174,10 +180,15 @@ thead > tr {
 	margin: 0 30px 8px 0;
 }
 
+#leg {
+	text-transform: uppercase;
+	font-weight: 600;
+}	
+
 .cat {
 	width: 10px;
 	height: 10px;
-	padding: 0 8px;
+	padding: 0 10px;
 	margin: 0 3px 0 0;
 	background-color: #000;
 }
