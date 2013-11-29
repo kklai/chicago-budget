@@ -7,22 +7,23 @@ function getData() {
 	$.ajax({
 	  type: "GET",
 	  url: test_data,
-	  dataType: "json",
+	  dataType: "jsonp",
 	  success: function(data) {
-	  	test = data;
+	  	budget_data = data;
+	  	getDepartments();
   }
 });
 }
 
-function init() {
-  Tabletop.init( { 
-  	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
-    callback: function(input, tabletop) { 
-    	budget_data = input;
-    	getDepartments();
-    },
-    simpleSheet: true } )	
-}
+// function init() {
+//   Tabletop.init( { 
+//   	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
+//     callback: function(input, tabletop) { 
+//     	budget_data = input;
+//     	getDepartments();
+//     },
+//     simpleSheet: true } )	
+// }
 
 function commaSeparateNumber(val){
   while (/(\d+)(\d{3})/.test(val.toString())){
@@ -177,7 +178,8 @@ function toggleViews(show, hide) {
 
 $(document).ready(function(){
 	chart();
-	init();
+	getData();
+	// init();
 });
 
 $(window).load(function(){
