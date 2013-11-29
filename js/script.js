@@ -191,5 +191,7 @@ $(window).load(function(){
 	tooSmall();
 	legend();
 	$('.chart').fadeIn('slow');
-	$('.dataTables_scrollBody').slimScroll();
+	$('.dataTables_scrollBody').slimScroll({
+		height: '500px'
+	});
 })
