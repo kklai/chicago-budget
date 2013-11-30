@@ -79,7 +79,7 @@ function writeDeptTable(n) {
 			$('tbody').append('<tr id="' + i +'"><td><p>' + (deptdetails[n][i][0][0]).toLowerCase() + '</p></td><td>' + (deptdetails[n][i][1][0]).toLowerCase() + '</td><td>$' + commaSeparateNumber(deptdetails[n][i][3]) + '</td><td>' + change +'%</td></tr>')
 			if (change.indexOf('-') >= 0) {
 				$('#' + i + ' td:last-child').css('color', '#ce2727');
-			} else if (change == "Infinity") {
+			} else if (change == "Infinity" || change == "NaN") {
 				$('#' + i + ' td:last-child').html('N/A');
 			} else {
 				$('#' + i + ' td:last-child').prepend('+');
@@ -88,7 +88,7 @@ function writeDeptTable(n) {
 		}
 	}
 	$('#budget').dataTable({
-		"sScrollY": "500px",
+		"sScrollY": "400px",
 		"bPaginate": false,
 		"aoColumns":[
 			null,
@@ -211,12 +211,19 @@ function legend() {
 }
 
 // toggle views
-function toggleViews(show, hide) {
-	$(this).css('opacity', '0.5');
-	$('.' + hide).fadeOut('fast');
-	$('#' + hide).removeClass('active');
-	$('.' + show).fadeIn('slow');
-	$('#' + show).addClass('active');
+function toggleViews(input) {
+	if (input === 'chart') {
+		$('#chart').addClass('active')
+		$('#table').removeClass('active')
+		$('.list').hide();
+		$('.chart').show();
+	} else if (input === 'table') {
+		$('#table').addClass('active')
+		$('#chart').removeClass('active')
+		$('.chart').hide();
+		rewrite();
+		rewrite();
+	}
 }
 
 $(document).ready(function(){
