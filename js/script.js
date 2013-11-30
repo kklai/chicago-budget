@@ -1,12 +1,7 @@
-var budget_total = 8482636000;
-var budget_data;
-var test_data = "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/";
-var test;
-
 function getData() {
 	$.ajax({
 	  type: "GET",
-	  url: test_data,
+	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
 	  dataType: "jsonp",
 	  success: function(data) {
 	  	budget_data = data;
@@ -33,9 +28,10 @@ function commaSeparateNumber(val){
  }
 
 // process data from spreadsheet into simpler arrays
+var budget_total = 8482636000;
+var budget_data;
 var all_departments = [];
 var departments = [];
-var deptnumbers = [];
 function getDepartments() {
 	for (var i = 0; i < budget_data.length; i++) {
 		all_departments.push(budget_data[i].dept);
