@@ -51,17 +51,17 @@ function getDepartments() {
 	getDeptInfo();
 }
 
+// function sortByDept() {
+// 	for (var i=0; i < budget_data.length; i++) {
+
+// 	}
+// }
+
 function getDeptInfo() {
 	for (var i=0; i < budget_data.length; i++){
 		for (var j=0; j < departments.length; j++) {
 			if (budget_data[i].dept == departments[j].name) {
 				departments[j].value += parseInt(budget_data[i].recommendation);
-			}
-		}
-	}
-	for (var i=0; i < budget_data.length; i++){
-		for (var j=0; j < departments.length; j++) {
-			if (budget_data[i].dept == departments[j].name) {
 				departments[j].change += parseInt(budget_data[i].total);
 			}
 		}
