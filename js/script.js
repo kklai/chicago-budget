@@ -32,6 +32,7 @@ var budget_total = 8482636000;
 var budget_data;
 var all_departments = [];
 var departments = [];
+var deptdetails = [];
 function getDepartments() {
 	for (var i = 0; i < budget_data.length; i++) {
 		all_departments.push(budget_data[i].dept);
@@ -39,6 +40,7 @@ function getDepartments() {
 	var uniques = _.uniq(all_departments);
 	for (var i = 0; i < uniques.length; i++) {
 		departments.push({'name': uniques[i]});
+		deptdetails.push([uniques[i]]);
 	}
 	for (var i = 0; i < departments.length; i++) {
 		departments[i].value = 0;
@@ -47,11 +49,56 @@ function getDepartments() {
 	getDeptInfo();
 }
 
-// function sortByDept() {
-// 	for (var i=0; i < budget_data.length; i++) {
+function sortByDept() {
+	for (var i=0; i < budget_data.length; i++) {
+		for (var j = 0; j < deptdetails.length; j++) {
+			if (budget_data[i].dept == deptdetails[j][0]) {
+				deptdetails[j].push([[budget_data[i].deptname], [budget_data[i].category], [budget_data[i].total], [budget_data[i].recommendation]]);
+			}
+		}
+	}
+}
 
-// 	}
-// }
+function rewrite() {
+	$('.chart').hide();
+	$('.list').empty();
+	$('.list').append('<table id="budget"></table>');
+	writeTable();
+	$('.list').show();
+}
+
+function writeDeptTable(n) {
+	$('.list').empty();
+	$('.list').append('<h2><a href="#" id="return" onclick="rewrite()"><i class="fa fa-reply"></i></a>' + deptdetails[n][0].toLowerCase() + '</h2>')
+	$('.list').append('<table id="budget"></table>');
+	$('#budget').append('<thead><tr><th>Department Name<i class="fa fa-sort"></i></th><th>Description<i class="fa fa-sort"></i></th><th>Appropriation<i class="fa fa-sort"></i></th><th>Change from 2013<i class="fa fa-sort"></i></th></tr></thead>');
+	$('#budget').append('<tbody></tbody>');
+	for (var i = 0; i < deptdetails[n].length ; i++ ) {
+		if (i != 0 ) {
+			var change = ((deptdetails[n][i][3] - deptdetails[n][i][2]) / deptdetails[n][i][2]).toFixed(2);
+			$('tbody').append('<tr id="' + i +'"><td><p>' + (deptdetails[n][i][0][0]).toLowerCase() + '</p></td><td>' + (deptdetails[n][i][1][0]).toLowerCase() + '</td><td>$' + commaSeparateNumber(deptdetails[n][i][3]) + '</td><td>' + change +'%</td></tr>')
+			if (change.indexOf('-') >= 0) {
+				$('#' + i + ' td:last-child').css('color', '#ce2727');
+			} else if (change == "Infinity") {
+				$('#' + i + ' td:last-child').html('N/A');
+			} else {
+				$('#' + i + ' td:last-child').prepend('+');
+				$('#' + i + ' td:last-child').css('color', '#019038');
+			}
+		}
+	}
+	$('#budget').dataTable({
+		"sScrollY": "500px",
+		"bPaginate": false,
+		"aoColumns":[
+			null,
+			null,
+			{"sType": "currency"},
+			{"sType": "percent"}
+		],
+		"aaSorting": [[ 2, "desc" ]]
+	});
+}
 
 function getDeptInfo() {
 	for (var i=0; i < budget_data.length; i++){
@@ -67,10 +114,10 @@ function getDeptInfo() {
 
 //Create table
 function writeTable(){
-	$('#budget').append('<thead><tr><th>Department<i class="fa fa-sort"></i></th><th>Recommendation<i class="fa fa-sort"></i></th><th>Percentage in Budget<i class="fa fa-sort"></i></th><th>% Change from 2013<i class="fa fa-sort"></i></th></tr></thead>');
+	$('#budget').append('<thead><tr><th>Department<i class="fa fa-sort"></i></th><th>Appropration<i class="fa fa-sort"></i></th><th>Percentage in Budget<i class="fa fa-sort"></i></th><th>% Change from 2013<i class="fa fa-sort"></i></th></tr></thead>');
 	$('#budget').append('<tbody></tbody>');
 	for (var i=0; i< departments.length; i++ ) {
-		$('tbody').append('<tr id="' + i + '"><td><p>' + (departments[i].name).toLowerCase() + '<p></td></tr>');
+		$('tbody').append('<tr id="' + i + '"><td><p><a href="#" onclick="writeDeptTable(' + i + ')">' + (departments[i].name).toLowerCase() + '</a></p></td></tr>');
 		// department total appropration
 		$('#' + i).append('<td>$' + commaSeparateNumber(departments[i].value) + '</td>')
 		// department percentage appropriation
@@ -187,7 +234,5 @@ $(window).load(function(){
 	tooSmall();
 	legend();
 	$('.chart').fadeIn('slow');
-	$('.dataTables_scrollBody').slimScroll({
-		height: '500px'
-	});
+	sortByDept();
 })
