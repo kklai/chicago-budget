@@ -108,7 +108,11 @@ table {
 }
 
 tr{
-	border-bottom: 1px solid #d3d3d3;
+	/*border-bottom: 1px solid #d3d3d3;*/
+}
+
+tbody tr:nth-child(even) {
+   background-color: #f6f6f6;
 }
 
 td > p {
@@ -244,11 +248,19 @@ thead > tr {
 		}
 
 		thead {
-			display: none;
+			/*display: none;*/
 		}
 		tbody td {
 			border-right: 5px solid #ececec !important;
 			padding: 0 5px 0 5px;
+		}
+		thead tr th {
+			min-width: 0;
+			background-size: 120% 2400px;
+			vertical-align: bottom;
+		}
+		thead tr th:nth-child(0), thead tr th:nth-child(1) {
+			margin-left:-30px;
 		}
 		h1, #intro {
 			padding: 0 0 0 10px;
