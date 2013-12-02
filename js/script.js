@@ -147,6 +147,18 @@ function writeTable(){
 	$('.list').hide();
 }
 
+function chartToTable(input){
+	// console.log(input);
+	for (var i = 0; i < deptdetails.length; i++) {
+		if ( input == deptdetails[i][0]) {
+			var number = i;
+		}
+	}
+	$('.chart').hide();
+	writeDeptTable(number);
+	$('.list').show();
+}
+
 // bubblechart
 function chart(){
 	var margin = {top: 40, right: 10, bottom: 10, left: 0},
@@ -172,6 +184,7 @@ function chart(){
 	      .data(treemap.nodes)
 	    .enter().append("div")
 	      .attr("class", "node")
+	      .attr("onclick", function(d) { return "chartToTable('" + d.name + "')" })
 	      .attr("title", function(d) { return (d.name).toLowerCase() + ': $' + commaSeparateNumber(parseInt(d.size)) + " (" + ((parseInt(d.size) / budget_total) * 100).toFixed(2) + "%)" })
 	      .call(position)
 	      .style("background", function(d) { return d.children ? color(d.name) : null; })
