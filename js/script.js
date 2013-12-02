@@ -69,7 +69,7 @@ function rewrite() {
 
 function writeDeptTable(n) {
 	$('.list').empty();
-	$('.list').append('<h2><a href="#" id="return" onclick="rewrite()"><i class="fa fa-reply"></i></a>' + deptdetails[n][0].toLowerCase() + '</h2>')
+	$('.list').append('<h2><a href="#" id="return" onclick="rewrite()"><i class="fa fa-reply"></i></a>' + deptdetails[n][0].toLowerCase() + '</h2><p class="dept-total">Total: $' + commaSeparateNumber(departments[n].value) + '</p>')
 	$('.list').append('<table id="budget"></table>');
 	$('#budget').append('<thead><tr><th>Department / Subdivision<i class="fa fa-sort"></i></th><th>Description<i class="fa fa-sort"></i></th><th>Appropriation<i class="fa fa-sort"></i></th><th>Change from 2013<i class="fa fa-sort"></i></th></tr></thead>');
 	$('#budget').append('<tbody></tbody>');
