@@ -156,6 +156,9 @@ function chartToTable(input){
 	}
 	$('.chart').hide();
 	writeDeptTable(number);
+	writeDeptTable(number);
+	$('#chart').removeClass('active');
+	$('#table').addClass('active');
 	$('.list').show();
 }
 
