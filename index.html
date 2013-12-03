@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Chicago Budget</title>
+	<meta name="description" content="Learn about the Chiacago Budget">
+	<meta name="author" content="KK Rebecca Lai">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheets/tipsy.css">
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- SCRIPTS
+	================================================== -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script src="js/tabletop.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+  <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="js/dataTables.currency.js"></script>
+  <script type="text/javascript" src="js/dataTables.percentage.js"></script>
+  <script src="js/jquery.tipsy.js"></script>
+  <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+	<div class="container">
+		<div class="header">
+			<div class="sixteen columns">
+				<h1><a href="/">2014 Chicago Budget Explorer</a></h1>
+			</div>
+			<div class="sixteen columns">
+    		<div class="row">
+      		<div class="thirteen columns alpha" id="intro"><p>The City of Chicago's new budget will be implemented on January 1st 2014. There are over 4,000 spending items on the new plan that incorporates new investments, spending cuts and increased appropriation for certain departments. Explore the breakdown of the budget by category of department, or take a deep dive into each spending item within departments. <wbr>&nbsp;<span id="source">Source: <a href="https://data.cityofchicago.org/Administration-Finance/Budget-2014-Budget-Recommendations-Appropriations/kpej-ig3k" target="_blank">City of Chicago Data Portal</a></span></p>
+      		</div>
+
+
+      		<!-- SOCIAL -->
+      		<div class="two columns omega">
+      			<ul id="toggle">
+      				<li><a href="#" class="toggle active" id="chart" onclick="toggleViews('chart')">Chart <i class="fa fa-bar-chart-o"></i></a></li>
+      				<li><a href="#" class="toggle" id="table" onclick="toggleViews('table')">Table <i class="fa fa-list-ul"></i></a></li>
+      			</ul>
+      		</div>
+    		</div>
+			</div>
+		</div><!-- header -->
+	<div class="sixteen columns list">
+			<table id="budget">
+			</table>
+		</div>
+	<div class="sixteen columns chart">
+	</div>
+
+
+<!-- End Document
+================================================== -->
+<script type="text/javascript" src="//use.typekit.net/nri5irx.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</body>
+</html>
