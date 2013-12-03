@@ -34,7 +34,7 @@
     {
      "name": "publicservice",
      "children": [
-        {"name":"DEPARTMENT OF POLICE","size":1371563213},
+        {"name":"POLICE DEPARTMENT","size":1371563213},
         {"name":"FIRE DEPARTMENT","size":575727555},
         {"name":"OFFICE OF EMERGENCY MANAGEMENT AND COMMUNICATIONS","size":203769847},
         {"name":"POLICE BOARD","size":434083},

@@ -1,24 +1,24 @@
-function getData() {
-	$.ajax({
-	  type: "GET",
-	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
-	  dataType: "jsonp",
-	  success: function(data) {
-	  	budget_data = data;
-	  	getDepartments();
-  }
-});
-}
-
-// function init() {
-//   Tabletop.init( { 
-//   	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
-//     callback: function(input, tabletop) { 
-//     	budget_data = input;
-//     	getDepartments();
-//     },
-//     simpleSheet: true } )	
+// function getData() {
+// 	$.ajax({
+// 	  type: "GET",
+// 	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
+// 	  dataType: "jsonp",
+// 	  success: function(data) {
+// 	  	budget_data = data;
+// 	  	getDepartments();
+//   }
+// });
 // }
+
+function init() {
+  Tabletop.init( { 
+  	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
+    callback: function(input, tabletop) { 
+    	budget_data = input;
+    	getDepartments();
+    },
+    simpleSheet: true } )	
+}
 
 function commaSeparateNumber(val){
   while (/(\d+)(\d{3})/.test(val.toString())){
@@ -258,8 +258,8 @@ function setWidth() {
 
 $(document).ready(function(){
 	chart();
-	getData();
-	// init();
+	// getData();
+	init();
 });
 
 $(window).load(function(){
