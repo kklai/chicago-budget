@@ -1,24 +1,24 @@
-// function getData() {
-// 	$.ajax({
-// 	  type: "GET",
-// 	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
-// 	  dataType: "jsonp",
-// 	  success: function(data) {
-// 	  	budget_data = data;
-// 	  	getDepartments();
-//   }
-// });
-// }
-
-function init() {
-  Tabletop.init( { 
-  	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
-    callback: function(input, tabletop) { 
-    	budget_data = input;
-    	getDepartments();
-    },
-    simpleSheet: true } )	
+function getData() {
+	$.ajax({
+	  type: "GET",
+	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
+	  dataType: "jsonp",
+	  success: function(data) {
+	  	budget_data = data;
+	  	getDepartments();
+  }
+});
 }
+
+// function init() {
+//   Tabletop.init( { 
+//   	key: '0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync',
+//     callback: function(input, tabletop) { 
+//     	budget_data = input;
+//     	getDepartments();
+//     },
+//     simpleSheet: true } )	
+// }
 
 function commaSeparateNumber(val){
   while (/(\d+)(\d{3})/.test(val.toString())){
@@ -148,7 +148,6 @@ function writeTable(){
 }
 
 function chartToTable(input){
-	// console.log(input);
 	for (var i = 0; i < deptdetails.length; i++) {
 		if ( input == deptdetails[i][0]) {
 			var number = i;
@@ -156,8 +155,8 @@ function chartToTable(input){
 	}
 	$('#chart').removeClass('active');
 	$('#table').addClass('active');
-	$('.chart').hide();
-	$('.list').show();
+	$('.chart').fadeOut();
+	$('.list').fadeIn();
 	writeDeptTable(number);
 }
 
@@ -230,12 +229,12 @@ function toggleViews(input) {
 	if (input === 'chart') {
 		$('#chart').addClass('active')
 		$('#table').removeClass('active')
-		$('.list').hide();
-		$('.chart').show();
+		$('.list').fadeOut();
+		$('.chart').fadeIn();
 	} else if (input === 'table') {
 		$('#table').addClass('active')
 		$('#chart').removeClass('active')
-		$('.chart').hide();
+		$('.chart').fadeOut();
 		rewrite();
 		rewrite();
 	}
@@ -258,8 +257,8 @@ function setWidth() {
 
 $(document).ready(function(){
 	chart();
-	// getData();
-	init();
+	getData();
+	// init();
 });
 
 $(window).load(function(){
