@@ -222,7 +222,7 @@ function tooSmall() {
 }
 
 function legend() {
-	$('.chart').append('<div class="legend"><ul><li id="leg">Categories:</li><li><span class ="cat" id="bus"></span>Buisness and Technology</li><li style="padding-right: 20px"><span class ="cat" id="gen"></span>General Offices</li><li><span class ="cat" id="rec"></span>Recreation</li><li><span class ="cat" id="soc"></span>Social Services</li><li style="padding-left: 124px;"><span class ="cat" id="infra"></span>Infrastructure</li><li style="padding-left: 80px;"><span class ="cat" id="trans"></span>Transportation</li><li style="padding-left: 24px;"><span class ="cat" id="fin"></span>Finance</li><li style="padding-left: 20px;"><span class ="cat" id="safety"></span>Safety and Protection</li></ul></div>')
+	$('.chart').append('<div class="legend"><ul><li id="leg">Categories:</li><li><span class ="cat" id="bus"></span>Buisness and Technology</li><li style="padding-right: 20px"><span class ="cat" id="gen"></span>Administration</li><li><span class ="cat" id="rec"></span>Recreation</li><li><span class ="cat" id="soc"></span>Social Services</li><li style="padding-left: 124px;"><span class ="cat" id="infra"></span>Infrastructure</li><li style="padding-left: 80px;"><span class ="cat" id="trans"></span>Transportation</li><li style="padding-left: 20px;"><span class ="cat" id="fin"></span>Finance</li><li style="padding-left: 20px;"><span class ="cat" id="safety"></span>Safety and Protection</li></ul></div>')
 }
 
 // toggle views
@@ -241,6 +241,21 @@ function toggleViews(input) {
 	}
 }
 
+function setWidth() {
+	browser_width = $(window).width();
+	if (browser_width > 1100) {
+    $('#table').removeClass('active');
+		$('#chart').addClass('active');
+		$('.chart').show();
+		$('.list').hide();
+  } else if (browser_width < 800){
+    $('#chart').removeClass('active');
+		$('#table').addClass('active');
+		$('.list').show();
+		$('.chart').hide();
+  }
+}
+
 $(document).ready(function(){
 	chart();
 	getData();
@@ -257,4 +272,9 @@ $(window).load(function(){
 	legend();
 	$('.chart').fadeIn('slow');
 	sortByDept();
+	setWidth();
+})
+
+$(window).resize(function() {
+	setWidth();
 })

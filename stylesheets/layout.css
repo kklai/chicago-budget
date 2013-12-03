@@ -185,9 +185,9 @@ thead > tr {
 }
 
 .node:hover {
-	-webkit-box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.3);
-	-moz-box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.3);
-	box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 0px 32px -2px rgba(0,0,0,0.2);
 }
 
 .dept {
@@ -260,6 +260,10 @@ thead > tr {
 		ul li {
 			display: inline-block;
 			margin-right: 10px;
+		}
+
+		.legend ul li {
+			padding: 0 !important;
 		}
 
 		thead {
