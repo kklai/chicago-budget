@@ -17,6 +17,12 @@
 /* #Site Styles
 ================================================== */
 
+=======
+.load {
+	margin-left: 200px;
+	/*display: none;*/
+}
+
 body {
 	padding: 0 0 30px 0;
 	font-family: "open-sans";
