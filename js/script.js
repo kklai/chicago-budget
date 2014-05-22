@@ -1,7 +1,7 @@
 function getData() {
 	$.ajax({
 	  type: "GET",
-	  url: "http://sheet-everywhere.herokuapp.com/0ArcRX35HpjojdHNKLXRmWDM1a1JsaVJpc0ZGN252Ync/",
+	  url: "budget_app_2014.json",
 	  dataType: "jsonp",
 	  success: function(data) {
 	  	budget_data = data;
@@ -257,7 +257,8 @@ function setWidth() {
 
 $(document).ready(function(){
 	chart();
-	getData();
+	// getData();
+	getDepartments();
 	// init();
 });
 
